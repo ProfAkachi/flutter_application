@@ -5,7 +5,7 @@ class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   static const Color secondary = ExternalColors.jobCardColor;
-  static const Color background = Color(0xFFF7F9FB);
+  static const Color background = ExternalColors.background;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,8 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       radius: 64,
-                      backgroundImage: NetworkImage(
-                        'https://lh3.googleusercontent.com/aida-public/AB6AXuAT4kA-m50pSbDNhe3UsU-XkcVv8iogwlsiPQLz1Bqfem1LrsBXzfSM2Zot-UkITg3cr2jGrFoiRxCRrfNoJE6Ae4PPgO_Zq5BGL5IxGTd48OsCLGdwiJ-iHf5nnUrvP9hYIwyGSqG3dGdrtq60aBpvF2xQDm8u_wC-f5YK3nwcSvHFM8yVS7CLwwfWlwWvjaA8EaQ1xpPhgf7R8L8InwAvS335NPQZo0f025_KbewFI2PRS21Nzbtmy7uO8I1Sq1KvSnaZu2W7kLKh',
+                      backgroundImage: AssetImage(
+                        'assets/images/profile/profile_picture.jfif'
                       ),
                     ),
                     Positioned(

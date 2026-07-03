@@ -34,4 +34,3 @@ class ExternalColors {
   static const Color recentPositngColor = Color.fromARGB(200, 25, 56, 104);
   
 }
-

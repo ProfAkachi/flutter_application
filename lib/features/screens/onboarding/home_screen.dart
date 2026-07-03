@@ -108,25 +108,30 @@ class _TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 18,
-            backgroundColor: ExternalColors.indicatorColor,
-            child: const Icon(Icons.person),
-          ),
-          const Spacer(),
-          CircleAvatar(
-            radius: 19,
-            backgroundImage: const AssetImage(
-              // 'assets/images/logo/Career Connect Logo.png',
-              'assets/images/logo/Minimalist CObalt and Teal Logo.png',
-            ),
-          ),
-          const Spacer(),
-          const Icon(Icons.more_vert),
-        ],
+      child:Center(
+  child: Container(
+    width: 30,
+    height: 30,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black12,
+          blurRadius: 10,
+          offset: Offset(0, 4),
+        ),
+      ],
+    ),
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Image.asset(
+        'assets/images/logo/Minimalist Cobalt and Teal Logo.png',
+        fit: BoxFit.contain,
       ),
+    ),
+  ),
+),
     );
   }
 }

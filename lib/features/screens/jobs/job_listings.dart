@@ -66,7 +66,7 @@ class _JobsScreenState extends State<JobsScreen> {
   final List<Job> jobs = [
     Job(
       title: "Senior Flutter Developer",
-      logo: "", // import from assets
+      logo: "assets/images/logo/Career Connect Logo.png",
       company: "TechFlow Inc.",
       location: "San Francisco",
       salary: "\$140k - \$180k",
@@ -75,7 +75,7 @@ class _JobsScreenState extends State<JobsScreen> {
     ),
     Job(
       title: "Backend Engineer (Go)",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo2.png",
       company: "CloudScale Systems",
       location: "Austin, TX",
       salary: "\$150k - \$200k",
@@ -84,7 +84,7 @@ class _JobsScreenState extends State<JobsScreen> {
     ),
     Job(
       title: "Product Designer",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo3.jfif",
       company: "DesignHub",
       location: "Remote",
       salary: "\$90k - \$120k",
@@ -93,16 +93,16 @@ class _JobsScreenState extends State<JobsScreen> {
     ),
     Job(
       title: "Mobile Engineer",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo2.png",
       company: "AppNova",
       location: "London",
       salary: "\$110k - \$150k",
       category: "Developer",
-      color: Colors.white,
+      color: ExternalColors.jobCardColor,
     ),
     Job(
       title: "Junior Flutter Developer",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo1.jfif",
       company: "TechFlow Inc.",
       location: "San Francisco",
       salary: "\$90k - \$100k",
@@ -111,7 +111,7 @@ class _JobsScreenState extends State<JobsScreen> {
     ),
     Job(
       title: "Senior Python Developer",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo6.jfif",
       company: "Dart Inc.",
       location: "Lagos",
       salary: "\$250k - \$300k",
@@ -120,7 +120,7 @@ class _JobsScreenState extends State<JobsScreen> {
     ),
     Job(
       title: "Data Scientist",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo7.png",
       company: "Cloud Inc.",
       location: "Remote",
       salary: "\$150k - \$200k",
@@ -129,7 +129,7 @@ class _JobsScreenState extends State<JobsScreen> {
     ),
     Job(
       title: "Cybersecurity Expert",
-      logo: "", // import from assets
+      logo: "assets/images/logo/compLogo8.jfif",
       company: "Cyberdime",
       location: "Abuja",
       salary: "\$70k - \$100k",
@@ -362,18 +362,26 @@ class _JobFeatured extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: job.color,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 40,
-            height: 40,
+            width: 50,
+            height: 50,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(10),
             ),
+             clipBehavior: Clip.antiAlias,
+   child: Padding(
+    padding: const EdgeInsets.all(8), // Adjust as needed
+    child: Image.asset(
+      job.logo,
+      fit: BoxFit.contain,
+    ),
+  ),
           ),
           const SizedBox(height: 12),
           Text(
@@ -428,7 +436,7 @@ class _JobCard extends StatelessWidget {
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: isSelected ? const Color.fromARGB(217, 15, 31, 69) : const Color.fromARGB(255, 15, 31, 69),
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: isSelected ? const Color.fromARGB(217, 15, 31, 69) : const Color.fromARGB(255, 15, 31, 69),
           width: 1.5,
@@ -450,11 +458,13 @@ class _JobCard extends StatelessWidget {
               color: isSelected ? Colors.white70 : Colors.grey.shade200,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Icon(
-              Icons.work,
-              color: isSelected ? Colors.white : Colors.grey,
-              // size: 30
-            ),
+            child: Padding(
+  padding: const EdgeInsets.all(4),
+  child: Image.asset(
+    job.logo,
+    fit: BoxFit.contain,
+  ),
+),
           ),
 
           const SizedBox(width: 12),
