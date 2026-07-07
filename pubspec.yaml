@@ -98,7 +98,7 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
 flutter_launcher_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
   image_path: "assets/images/logo/Minimalist Cobalt and Teal Logo.png"
   # Optional: For Android 8.0+ adaptive icons to prevent a white background ring

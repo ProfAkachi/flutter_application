@@ -4,16 +4,17 @@ import 'package:career_connect_app/constant/theme/external_colors.dart';
 
 class SavedJobsScreen extends StatelessWidget {
   final List<Job> savedJobs;
+  final VoidCallback? onBrowseJobs;
 
-  const SavedJobsScreen({super.key, required this.savedJobs});
+  const SavedJobsScreen({super.key, required this.savedJobs, this.onBrowseJobs,});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xffF7F8FA),
+    return Container(
+      color: ExternalColors.background,
 
-      body: savedJobs.isEmpty
-          ? const _EmptySavedJobs()
+      child: savedJobs.isEmpty
+          ? _EmptySavedJobs(onBrowseJobs: onBrowseJobs)
           : ListView.builder(
               padding: const EdgeInsets.all(16),
               itemCount: savedJobs.length,
@@ -152,7 +153,11 @@ class _SavedJobCard extends StatelessWidget {
 }
 
 class _EmptySavedJobs extends StatelessWidget {
-  const _EmptySavedJobs();
+  final VoidCallback? onBrowseJobs;
+
+  const _EmptySavedJobs({
+    this.onBrowseJobs,
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -186,13 +191,11 @@ class _EmptySavedJobs extends StatelessWidget {
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: onBrowseJobs,
               icon: const Icon(Icons.search),
               label: const Text("Browse Jobs"),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF2F6BFF),
+                backgroundColor: ExternalColors.jobCardColor,
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,

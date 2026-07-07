@@ -122,7 +122,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
-                        ExternalColors.indicatorColor, // Your desired color
+                        ExternalColors.jobCardColor, // Your desired color
                   ),
                   onPressed: loading ? null : submit,
                   child: loading
@@ -134,8 +134,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                       : const Text(
                           "Sign In",
                           style: TextStyle(
-                            color: ExternalColors.text,
-                            fontWeight: FontWeight.bold,
+                            color: ExternalColors.background,
+                            fontWeight: FontWeight.normal,
                           ),
                         ),
                 ),
@@ -182,7 +182,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       minimumSize: Size.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
-                    child: const Text(" Sign up"),
+                    child: const Text(" Sign up", style: TextStyle(color: ExternalColors.jobCardColor, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -373,7 +373,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
-                        ExternalColors.indicatorColor, // Your desired color
+                        ExternalColors.jobCardColor, // Your desired color
                   ),
 
                   onPressed: loading ? null : submit,
@@ -386,8 +386,8 @@ class _SignupWidgetState extends State<SignupWidget> {
                       : const Text(
                           "Sign up",
                           style: TextStyle(
-                            color: ExternalColors.text,
-                            fontWeight: FontWeight.bold,
+                            color: ExternalColors.background,
+                            fontWeight: FontWeight.normal,
                           ),
                         ),
                 ),
@@ -406,7 +406,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                       minimumSize: Size.zero,
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     ),
-                    child: const Text(" Sign in"),
+                    child: const Text(" Sign in", style: TextStyle(color: ExternalColors.jobCardColor, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -512,6 +512,10 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: AuthFlipCard()));
+    return Container(
+      color: ExternalColors.background,
+      alignment: Alignment.center,
+      child: const AuthFlipCard(),
+    );
   }
 }
