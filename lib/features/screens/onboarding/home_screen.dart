@@ -4,6 +4,7 @@ import 'package:career_connect_app/features/screens/profile/profile_screen.dart'
 import 'package:career_connect_app/features/screens/jobs/job_listings.dart';
 import 'package:career_connect_app/features/screens/auth/auth.dart';
 import 'package:career_connect_app/features/screens/jobs/saved_jobs.dart';
+import 'package:career_connect_app/features/screens/app_hist/application_history.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,13 +43,21 @@ class _HomeScreenState extends State<HomeScreen> {
     final screens = [
       JobsScreen(favoriteJobs: favoriteJobs, onFavoriteToggle: toggleFavorite),
 
-      const Center(child: Text("Applied Screen")),
+      const ApplicationHistoryScreen(),
 
       const ProfileScreen(),
 
       const AuthScreen(),
 
-      SavedJobsScreen(savedJobs: favoriteJobs.toList()),
+      SavedJobsScreen(
+        savedJobs: favoriteJobs.toList(),
+        onBrowseJobs: () {
+          setState(() {
+            _currentIndex = 0;
+          });
+        },),
+
+      
     ];
     return Scaffold(
       backgroundColor: ExternalColors.background,
